@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio en maintenance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes spin-slow {
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 3s linear infinite;
+        }
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .animate-pulse-soft {
+            animation: pulse-soft 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-md w-full bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 text-center border border-white/20">
+        
+        <!-- Icône d'engrenage -->
+        <div class="mb-6">
+            <svg class="w-20 h-20 mx-auto text-white animate-spin-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+        </div>
+
+        <!-- Titre -->
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            En maintenance
+        </h1>
+
+        <!-- Message -->
+        <p class="text-white/90 text-lg mb-6">
+            Mon portfolio est actuellement en cours d'amélioration.
+        </p>
+        
+        <p class="text-white/70 mb-8">
+            Je serai de retour très prochainement avec un tout nouveau site.<br>
+            Merci pour votre patience !
+        </p>
+
+        <!-- Barre de progression -->
+        <div class="w-full bg-white/20 rounded-full h-2 mb-8 overflow-hidden">
+            <div class="bg-white h-2 rounded-full animate-pulse-soft" style="width: 65%"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>
