@@ -3,57 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio en maintenance</title>
+    <meta name="description" content="Portfolio de Tiana Mahery - Site en maintenance">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Portfolio | Tiana Mahery - Maintenance</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-gradient-animated {
+            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #0f172a, #1e293b);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
         @keyframes spin-slow {
+            from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-        .animate-spin-slow {
-            animation: spin-slow 3s linear infinite;
-        }
-        @keyframes pulse-soft {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        .animate-pulse-soft {
-            animation: pulse-soft 2s ease-in-out infinite;
+        .gear-animation {
+            animation: spin-slow 20s linear infinite;
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 min-h-screen flex items-center justify-center p-4">
+<body class="bg-gradient-animated min-h-screen flex items-center justify-center p-4 md:p-8">
 
-    <div class="max-w-md w-full bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 text-center border border-white/20">
+    <div class="relative max-w-5xl w-full">
         
-        <!-- Icône d'engrenage -->
-        <div class="mb-6">
-            <svg class="w-20 h-20 mx-auto text-white animate-spin-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-            </svg>
+        <!-- Statut badge -->
+        <div class="flex justify-center mb-8">
+            <div class="bg-emerald-500/10 backdrop-blur-sm border border-emerald-500/30 rounded-full px-5 py-2 inline-flex items-center gap-2">
+                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                <span class="text-emerald-400 text-sm font-medium">MAINTENANCE PLANIFIÉE</span>
+            </div>
         </div>
 
-        <!-- Titre -->
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
-            En maintenance
-        </h1>
+        <!-- Contenu principal -->
+        <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl">
+            
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                
+                <!-- Section gauche - Message principal -->
+                <div class="flex-1 text-center lg:text-left">
+                    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                        En cours<br>
+                        <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">d'amélioration</span>
+                    </h1>
+                    
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        Je travaille actuellement sur une toute nouvelle version de mon portfolio.<br>
+                        Un espace plus moderne, plus rapide et plus inspirant arrive très bientôt.
+                    </p>
 
-        <!-- Message -->
-        <p class="text-white/90 text-lg mb-6">
-            Mon portfolio est actuellement en cours d'amélioration.
-        </p>
-        
-        <p class="text-white/70 mb-8">
-            Je serai de retour très prochainement avec un tout nouveau site.<br>
-            Merci pour votre patience !
-        </p>
+                    <!-- Timeline estimée -->
+                    <div class="bg-white/5 rounded-2xl p-5 mb-8 inline-block lg:block">
+                        <div class="flex items-center gap-4 flex-wrap justify-center lg:justify-start">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="text-gray-300">Lancement prévu :</span>
+                                <span class="text-white font-semibold">Juin 2026</span>
+                            </div>
+                            <div class="w-px h-6 bg-white/20 hidden lg:block"></div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                                <span class="text-gray-300">Progression :</span>
+                                <span class="text-white font-semibold">75%</span>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- Barre de progression -->
-        <div class="w-full bg-white/20 rounded-full h-2 mb-8 overflow-hidden">
-            <div class="bg-white h-2 rounded-full animate-pulse-soft" style="width: 65%"></div>
+                    <!-- Boutons d'action -->
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <a href="mailto:tiana.mahery@example.com" class="group relative inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-lg">
+                            <svg class="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            Me contacter
+                        </a>
+                        <button onclick="copyEmail()" class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 py-3 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+                            </svg>
+                            Copier l'email
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Section droite - Illustration / Info contact -->
+                <div class="flex-1">
+                    <div class="relative">
+                        <!-- Icône décorative -->
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl"></div>
+                        
+                        <div class="relative bg-white/5 rounded-2xl p-6 border border-white/10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                                    <span class="text-white font-bold text-xl">TM</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-semibold">Tiana Mahery</h3>
+                                    <p class="text-gray-400 text-sm">Développeur Full Stack</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-3 text-sm">
+                                <div class="flex items-center gap-3 text-gray-300">
+                                    <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span>Antananarivo, Madagascar</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-gray-300">
+                                    <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.66 0 3-4 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4-3-9s1.34-9 3-9"></path>
+                                    </svg>
+                                    <span>Disponible pour collaboration</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 pt-6 border-t border-white/10">
+                                <p class="text-gray-400 text-xs uppercase tracking-wider mb-3">Suivez-moi</p>
+                                <div class="flex gap-4">
+                                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0021.145-11.942c0-.213 0-.425-.015-.637A9.936 9.936 0 0024 4.555z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.302 3.438 9.8 8.205 11.387.6.113.82-.26.82-.58 0-.287-.01-1.05-.015-2.06-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.73.082-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.306.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.123-.3-.535-1.52.117-3.16 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.64.24 2.86.118 3.16.768.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.62-5.476 5.92.43.37.824 1.102.824 2.22 0 1.602-.015 2.894-.015 3.287 0 .322.216.698.83.578C20.565 21.795 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer avec progression technique -->
+            <div class="mt-10 pt-6 border-t border-white/10">
+                <div class="flex flex-wrap justify-between items-center gap-4 text-sm">
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                            <span class="text-gray-400">Base de données</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-yellow-500 rounded-full animate-pulse"></div>
+                            <span class="text-gray-400">Interface UI/UX</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                            <span class="text-gray-400">Tests en cours</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-xs">
+                        © 2026 Tiana Mahery — Tous droits réservés
+                    </p>
+                </div>
+            </div>
         </div>
-
     </div>
+
+    <script>
+        function copyEmail() {
+            const email = "tiana.mahery@example.com";
+            navigator.clipboard.writeText(email).then(() => {
+                // Notification temporaire
+                const btn = event.target.closest('button');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Email copié !';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 2000);
+            });
+        }
+    </script>
 
 </body>
 </html>
